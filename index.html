@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech with Emotion</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        #waveform {
+            display: none;
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+        #3dAnimation {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Text to Speech with Emotion</h1>
+        <form id="ttsForm">
+            <label for="textInput">Enter your text:</label>
+            <textarea id="textInput" name="text" rows="4" required></textarea>
+            <label for="voiceSelect">Choose a voice:</label>
+            <select id="voiceSelect" name="voice">
+                <option value="29vD33N1CtxCmqQRPOHJ">Voice 1</option>
+                <option value="EXAVITQu4vr4xnSDxMaL">Voice 2</option>
+                <option value="IKne3meq5aSn9XLyUdCD">Voice 3</option>
+                <option value="JBFqnCBsd6RMkjVDRZzb">Voice 4</option>
+                <option value="N2lVS1w4EtoT3dr4eOWO">Voice 5</option>
+                <option value="TX3LPaxmHKxFdv7VOQHJ">Voice 6</option>
+                <option value="ThT5KcBeYPX3keUQqHPh">Voice 7</option>
+                <option value="Xb7hH8MSUJpSbSDYk0k2">Voice 8</option>
+                <option value="XrExE9yKIg1WjnnlVkGX">Voice 9</option>
+            </select>
+            <label for="emotionSelect">Select emotion:</label>
+            <select id="emotionSelect" name="emotion">
+                <option value="Happiness">Happiness</option>
+                <option value="Sadness">Sadness</option>
+                <option value="Anger">Anger</option>
+                <option value="Exclamation">Exclamation</option>
+                <option value="Distress">Distress</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Mixed Emotion">Mixed Emotion</option>
+            </select>
+            <button type="submit">Generate Speech</button>
+        </form>
+        <canvas id="waveform"></canvas>
+        <div id="3dAnimation"></div>
+        <audio id="audioPlayer" controls style="display:none;"></audio>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
